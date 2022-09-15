@@ -5,7 +5,14 @@ module.exports = {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      boxShadow: {
+        'outlined-primary-shadow': '0 0 1em 0.25em #fcdda3'
+      },
+      colors: {
+        primary: '#FCDDA3'
+      }
+    },
   },
   plugins: [],
 }
