@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        "xs": "480px"
+      },
       boxShadow: {
         'outlined-primary-shadow': '0 0 1em 0.25em #fcdda3'
       },

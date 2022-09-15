@@ -25,7 +25,7 @@ body {
 
 
 #app {
-  @apply p-4 md:p-8 flex text-center place-items-center my-0 mx-auto xl:px-24;
+  @apply p-4 md:p-8 flex place-items-center my-0 mx-auto xl:px-24;
 }
 
 .link {
