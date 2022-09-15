@@ -10,7 +10,7 @@ defineProps<Props>();
   <component
     :is="href ? 'a' : 'button'"
     :href="href || ''"
-    class="font-medium text-[32px] grid place-items-center shadow-lg h-[78px] w-60 bg-primary"
+    class="transition-shadow duration-500 hover:shadow-outlined-primary-shadow font-medium text-2xl grid place-items-center shadow-lg h-16 w-48 bg-primary text-black"
   >
     <slot />
   </component>

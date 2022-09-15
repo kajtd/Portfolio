@@ -32,15 +32,17 @@ const toggleMobileNav = (): void => {
 </script>
 
 <template>
-  <header class="flex items-center justify-between w-full mx-auto">
+  <header
+    class="flex items-center justify-between w-full mx-auto mt-6"
+  >
     <div class="w-full mx-auto flex items-center justify-between">
       <div
-        class="font-medium flex items-center leading-[78px] text-lg md:text-[32px]"
+        class="font-medium flex items-center leading-[78px] text-lg md:text-2xl"
       >
         <img
           src="./../assets/icons/spiral.svg"
           alt=""
-          class="mr-1 w-[32px] md:w-auto"
+          class="mr-1 w-8 md:w-10"
         />
         <span>Kajetan Domagała</span>
       </div>
@@ -51,8 +53,10 @@ const toggleMobileNav = (): void => {
       <nav class="hidden xl:flex items-center justify-start">
         <ul class="flex items-center gap-8">
           <li v-for="link in links" :key="link.name">
-            <a :href="link.url" class="inline-block">
-              <span class="font-medium text-[32px] leading-[78px]">
+            <a :href="link.url" class="inline-block link">
+              <span
+                class="font-medium text-2xl leading-[78px] text-black"
+              >
                 {{ link.name }}
               </span>
             </a>
@@ -71,7 +75,7 @@ const toggleMobileNav = (): void => {
             <li
               v-for="link in links"
               :key="link.name"
-              class="text-3xl py-6 font-semibold transition duration-300 cursor-pointer text-gray-900"
+              class="text-3xl py-6 font-bold transition duration-300 cursor-pointer text-black"
             >
               <button @click="toggleMobileNav">
                 <a :href="link.url" class="inline-block">

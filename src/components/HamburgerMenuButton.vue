@@ -17,7 +17,7 @@ defineEmits(['toggleMobileNav']);
       :checked="checked"
     />
     <label
-      class="hamburger block relative w-[50px] h-[36px] z-50 cursor-pointer"
+      class="hamburger block relative w-[50px] h-10 z-50 cursor-pointer"
       for="nav-checkbox"
     >
       <button

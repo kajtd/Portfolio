@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        'outlined-primary-shadow': '0 0 1em 0.25em #fcdda3'
+      },
       colors: {
         primary: '#FCDDA3'
       }
