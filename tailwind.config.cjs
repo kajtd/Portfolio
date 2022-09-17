@@ -6,8 +6,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        "xs": "480px"
+      },
       boxShadow: {
-        'outlined-primary-shadow': '0 0 1em 0.25em #fcdda3'
+        'outlined-primary-shadow': '0 0 0 12px #fcdda3'
       },
       colors: {
         primary: '#FCDDA3'

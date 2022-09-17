@@ -20,12 +20,12 @@
 
 
 body {
-  @apply m-0 min-w-[320px] min-h-screen bg-[#FEFDF1];
+  @apply m-0 min-w-[320px] min-h-screen overflow-x-hidden bg-[#FEFDF1];
 }
 
 
 #app {
-  @apply p-4 md:p-8 flex text-center place-items-center my-0 mx-auto xl:px-24;
+  @apply p-4 md:p-8 flex place-items-center my-0 mx-auto xl:px-24;
 }
 
 .link {
@@ -51,6 +51,15 @@ body {
 .link:hover::after,
 .link:focus::after {
   transform: translate3d(0, 0, 0);
+}
+
+.custom-icon {
+  transition: box-shadow 0.5s ease-in;
+  border-radius: 50%;
+}
+
+.custom-icon:hover {
+  @apply shadow-outlined-primary-shadow;
 }
 
 @media (prefers-color-scheme: light) {
