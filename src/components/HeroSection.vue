@@ -13,7 +13,7 @@ onMounted(() => {
     },
     {
       duration: 1.5,
-      delay: 1,
+      delay: 3.5,
       opacity: 1,
       y: 0,
     }
@@ -31,12 +31,12 @@ onMounted(() => {
       Frontend developer passionate about creating web applications
     </h1>
     <div
-      class="flex bottom-12 right-0 absolute xs:bottom-16 xs:right-12 lg:bottom-36 lg:right-36"
+      class="hidden xs:flex bottom-12 right-0 absolute sm:bottom-24 sm:right-16 xl:!bottom-36 xl:!right-36"
     >
       <img
         src="./../assets/icons/arrow.svg"
         alt=""
-        class="w-24 relative top-12"
+        class="w-24 relative top-14 left-2"
       />
       <p class="text-black text-base max-w-[150px]">
         View the projects in my portfolio to learn more about who I
@@ -47,7 +47,11 @@ onMounted(() => {
       class="absolute bottom-0 left-4 md:left-8 xl:left-24 flex flex-col items-center gap-2"
     >
       <a href="https://github.com/kajtd" target="_blank">
-        <img src="./../assets/icons/github.svg" alt="" class="w-8" />
+        <img
+          src="./../assets/icons/github.svg"
+          alt=""
+          class="w-8 md:w-12 custom-icon"
+        />
       </a>
       <a
         href="https://www.linkedin.com/in/kajetan-domagala/"
@@ -56,7 +60,7 @@ onMounted(() => {
         <img
           src="./../assets/icons/linkedin.svg"
           alt=""
-          class="w-8"
+          class="w-8 md:w-12 custom-icon"
         />
       </a>
       <div class="h-16 w-2 bg-black"></div>
