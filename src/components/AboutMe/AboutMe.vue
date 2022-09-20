@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import TechnologiesGrid from './TechnologiesGrid.vue';
+</script>
+
 <template>
   <section
     class="bg-white min-h-screen flex flex-col justify-evenly relative px-4 md:px-8 xl:px-24"
@@ -33,6 +37,7 @@
           class="rotate-[200deg] relative bottom-12 left-1"
         />
       </div>
+      <TechnologiesGrid />
     </div>
   </section>
 </template>
