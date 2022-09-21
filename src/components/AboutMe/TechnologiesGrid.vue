@@ -17,7 +17,9 @@ const technologies = ref<string[]>([
 </script>
 
 <template>
-  <div class="self-end mr-24 mt-12">
+  <div
+    class="scale-75 sm:scale-100 self-end xl:mr-24 mt-3 sm:mt-16 xl:mt-12"
+  >
     <TechnologiesRow
       :indexes="[0, 1, 2, 3]"
       :technologies="technologies"
