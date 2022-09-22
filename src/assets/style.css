@@ -25,7 +25,7 @@ body {
 
 
 #app {
-  @apply p-4 md:p-8 flex place-items-center my-0 mx-auto xl:px-24;
+  @apply px-4 md:px-8 flex place-items-center my-0 mx-auto xl:px-24;
 }
 
 .link {
@@ -66,5 +66,16 @@ body {
   :root {
     color: #213547;
     background-color: #ffffff;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .link:hover::after,
+  .link:focus::after {
+    transform: none;
+  }
+  
+  .custom-icon:hover {
+    box-shadow: none;
   }
 }
