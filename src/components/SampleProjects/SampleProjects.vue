@@ -6,6 +6,8 @@ interface Project {
   imageName: string;
   title: string;
   description: string;
+  codeUrl?: string;
+  liveUrl?: string;
 }
 
 const projects = ref<Project[]>([
@@ -14,16 +16,21 @@ const projects = ref<Project[]>([
     title: 'Cryptoarc',
     description:
       'Send Ether to everyone with this web3 decentralized application.',
+    codeUrl: 'https://github.com/kajtd/cryptoarc',
+    liveUrl: 'https://cryptoarc.netlify.app/',
   },
   {
     imageName: 'WebCookbook',
     title: 'WebCookbook',
     description: 'Social media app for people who love to cook.',
+    codeUrl: 'https://github.com/kajtd/WebCookbook',
   },
   {
     imageName: 'MD-Previewer',
     title: 'MDPreviewer',
     description: 'Edit your markdown files in the browser.',
+    codeUrl: 'https://github.com/kajtd/MD-Previewer',
+    liveUrl: 'https://md-preview-editor.netlify.app/',
   },
 ]);
 </script>
@@ -43,6 +50,8 @@ const projects = ref<Project[]>([
       :image-name="project.imageName"
       :title="project.title"
       :description="project.description"
+      :codeUrl="project.codeUrl"
+      :liveUrl="project.liveUrl"
       :class="index % 2 ? 'self-end' : ''"
     />
   </section>
