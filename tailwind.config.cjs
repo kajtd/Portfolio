@@ -13,7 +13,8 @@ module.exports = {
         'outlined-primary-shadow': '0 0 0 12px #fcdda3'
       },
       colors: {
-        primary: '#FCDDA3'
+        primary: '#FCDDA3',
+        background: '#FEFDF1'
       }
     },
   },
