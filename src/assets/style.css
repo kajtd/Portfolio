@@ -17,15 +17,17 @@
   -webkit-text-size-adjust: 100%;
 }
 
-
+html {
+  scroll-behavior: smooth
+}
 
 body {
-  @apply m-0 min-w-[320px] min-h-screen overflow-x-hidden bg-[#FEFDF1];
+  @apply m-0 min-w-[320px] min-h-screen overflow-x-hidden bg-background;
 }
 
 
 #app {
-  @apply px-4 md:px-8 flex place-items-center my-0 mx-auto xl:px-24;
+  @apply flex place-items-center my-0 mx-auto;
 }
 
 .link {
@@ -54,20 +56,10 @@ body {
 }
 
 .custom-icon {
-  transition: box-shadow 0.5s ease-in;
-  border-radius: 50%;
+ @apply relative border border-white border-solid rounded-full p-[10px] w-12 h-12 md:w-16 md:h-16 transition-shadow duration-500 hover:shadow-outlined-primary-shadow;
 }
 
-.custom-icon:hover {
-  @apply shadow-outlined-primary-shadow;
-}
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-}
 
 @media (prefers-reduced-motion) {
   .link:hover::after,
