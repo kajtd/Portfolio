@@ -2,6 +2,7 @@
 interface Props {
   href?: string;
   disabled?: boolean;
+  type?: 'submit' | 'button' | 'reset';
   secondary?: boolean;
 }
 
@@ -12,7 +13,8 @@ defineProps<Props>();
   <component
     :is="href ? 'a' : 'button'"
     :href="href || ''"
-    :idsabled="disabled"
+    :disabled="disabled"
+    :type="type || 'button'"
     :class="[
       'button relative overflow-hidden transition-shadow duration-500 hover:shadow-outlined-primary-shadow font-medium text-xl md:text-2xl grid place-items-center shadow-lg h-12 w-36 md:h-16 md:w-48 bg-primary text-black',
       { 'opacity-50 pointer-events-none': disabled },

@@ -4,7 +4,8 @@ import HeroSection from './components/HeroSection.vue';
 import AppOverlay from './components/AppOverlay.vue';
 import { useMedia } from './composables/useMedia';
 import AboutMe from './components/AboutMe/AboutMe.vue';
-import SampleProjects from './components/SampleProjects.vue';
+import SampleProjects from './components/SampleProjects/SampleProjects.vue';
+import ContactMe from './components/ContactMe.vue';
 
 const isReducedMotion = useMedia('(prefers-reduced-motion)');
 </script>
@@ -18,5 +19,6 @@ const isReducedMotion = useMedia('(prefers-reduced-motion)');
     </div>
     <AboutMe />
     <SampleProjects />
+    <ContactMe />
   </main>
 </template>
