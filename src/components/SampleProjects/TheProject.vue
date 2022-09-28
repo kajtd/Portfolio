@@ -1,18 +1,33 @@
 <script setup lang="ts">
+import { ref, onMounted } from 'vue';
 import AppButton from '../AppButton.vue';
+import { useIntersectionObserver } from './../../composables/useIntersectionObserver';
+
 interface Props {
   imageName: string;
   title: string;
   description: string;
   codeUrl?: string;
   liveUrl?: string;
+  animationClass: string;
 }
 
-defineProps<Props>();
+const props = defineProps<Props>();
+
+const { observedElement, elementClass, observer } =
+  useIntersectionObserver();
+
+const project = ref<Element>();
+
+onMounted(() => {
+  observedElement.value = project.value;
+  elementClass.value = `${props.animationClass}--animation`;
+  observer.observe(observedElement.value as Element);
+});
 </script>
 
 <template>
-  <div>
+  <div ref="project" :class="animationClass">
     <div
       class="relative max-w-4xl w-full img-wrapper overflow-hidden cursor-pointer"
     >
@@ -28,10 +43,20 @@ defineProps<Props>();
           {{ title }}
         </h3>
         <div class="flex items-center gap-2">
-          <AppButton secondary :href="codeUrl" :disabled="!codeUrl">
+          <AppButton
+            class="w-24 h-12 text-base"
+            secondary
+            :href="codeUrl"
+            :disabled="!codeUrl"
+          >
             Code ⌨️
           </AppButton>
-          <AppButton secondary :href="liveUrl" :disabled="!liveUrl">
+          <AppButton
+            class="w-24 h-12 text-base"
+            secondary
+            :href="liveUrl"
+            :disabled="!liveUrl"
+          >
             Live 📡
           </AppButton>
         </div>
