@@ -1,0 +1,31 @@
+.movein-left {
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  transform: translateX(-400px);
+}
+
+.movein-left--animation {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.movein-right {
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  transform: translateX(400px);
+}
+
+.movein-right--animation {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.fadein {
+  transition: opacity 1.5s ease-in-out;
+  opacity: 0;
+}
+
+.fadein--animation {
+  transform: translateX(0px);
+  opacity: 1;
+}

@@ -1,5 +1,18 @@
 <script setup lang="ts">
+import { ref, onMounted } from 'vue';
 import AppButton from './AppButton.vue';
+import { useIntersectionObserver } from './../composables/useIntersectionObserver';
+
+const { observedElement, elementClass, observer } =
+  useIntersectionObserver();
+
+const contactText = ref<Element>();
+
+onMounted(() => {
+  observedElement.value = contactText.value;
+  elementClass.value = 'fadein--animation';
+  observer.observe(observedElement.value as Element);
+});
 </script>
 
 <template>
@@ -10,7 +23,7 @@ import AppButton from './AppButton.vue';
     <div
       class="flex flex-col xl:flex-row items-center justify-around w-full"
     >
-      <div>
+      <div ref="contactText" class="fadein">
         <h2 class="text-base xl:text-2xl font-semibold">
           contact me
         </h2>

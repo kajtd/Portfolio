@@ -37,6 +37,7 @@ const projects = ref<Project[]>([
 
 <template>
   <section
+    id="projects"
     class="min-h-screen flex flex-col justify-evenly gap-12 md:gap-36 py-12 md:py-36 px-6 md:px-8 xl:px-24"
   >
     <div>
@@ -53,6 +54,7 @@ const projects = ref<Project[]>([
       :codeUrl="project.codeUrl"
       :liveUrl="project.liveUrl"
       :class="index % 2 ? 'self-end' : ''"
+      :animation-class="index % 2 ? 'movein-right' : 'movein-left'"
     />
   </section>
 </template>

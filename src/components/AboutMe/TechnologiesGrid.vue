@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import TechnologiesRow from './TechnologiesRow.vue';
+import { useIntersectionObserver } from './../../composables/useIntersectionObserver';
 
 const technologies = ref<string[]>([
   'html',
@@ -14,11 +15,23 @@ const technologies = ref<string[]>([
   'solidity',
   'firebase',
 ]);
+
+const { observedElement, elementClass, observer } =
+  useIntersectionObserver();
+
+const technologiesGrid = ref<Element>();
+
+onMounted(() => {
+  observedElement.value = technologiesGrid.value;
+  elementClass.value = 'fadein--animation';
+  observer.observe(observedElement.value as Element);
+});
 </script>
 
 <template>
   <div
-    class="scale-75 sm:scale-100 self-end xl:mr-24 mt-3 sm:mt-16 xl:mt-12"
+    ref="technologiesGrid"
+    class="fadein scale-75 sm:scale-100 self-end xl:mr-24 mt-3 sm:mt-16 xl:mt-12"
   >
     <TechnologiesRow
       :indexes="[0, 1, 2, 3]"
