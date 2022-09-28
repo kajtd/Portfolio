@@ -1,21 +1,35 @@
 <script setup lang="ts">
+import { onMounted, ref } from 'vue';
 import TechnologiesGrid from './TechnologiesGrid.vue';
+import { useIntersectionObserver } from './../../composables/useIntersectionObserver';
+
+const { observedElement, elementClass, observer } =
+  useIntersectionObserver();
+
+const aboutMe = ref<Element>();
+
+onMounted(() => {
+  observedElement.value = aboutMe.value;
+  elementClass.value = 'fadein--animation';
+  observer.observe(observedElement.value as Element);
+});
 </script>
 
 <template>
   <section
-    class="min-h-screen bg-white flex flex-col justify-evenly relative px-6 md:px-8 xl:px-24"
+    id="about"
+    class="min-h-screen bg-white flex flex-col justify-evenly relative py-36 px-6 md:px-8 xl:px-24"
   >
-    <div class="border-t border-gray-600 mt-8 xl:mt-2"></div>
+    <div class="border-t border-gray-600 mt-8 xl:mt-2 pb-4"></div>
     <div
       class="flex flex-col xl:flex-row items-center justify-between gap-10 xl:gap-24"
     >
-      <div>
-        <h2 class="text-xl md:text-2xl font-semibold pt-8 xl:pt-0">
+      <div ref="aboutMe" class="fadein">
+        <h2 class="text-base md:text-xl font-semibold pt-8 xl:pt-0">
           about me
         </h2>
         <h3
-          class="text-[40px] leading-[50px] md:text-[50px] md:leading-[70px] font-normal"
+          class="text-[40px] leading-[50px] md:text-[80px] md:leading-[100px] font-normal max-w-4xl"
         >
           Passionate about new technologies.
         </h3>
@@ -23,12 +37,12 @@ import TechnologiesGrid from './TechnologiesGrid.vue';
       <div
         class="flex flex-col md:flex-row items-start gap-10 w-full md:w-auto"
       >
-        <p class="max-w-xs">
+        <p class="max-w-xs text-base lg:text-xl">
           I’ve started learning frontend developer in 2019 and haven’t
           stopped since. With over one year of commercial experience,
           I am planning on growing as a Frontend Developer.
         </p>
-        <p class="max-w-xs">
+        <p class="max-w-xs text-base lg:text-xl">
           My favourite framework is
           <span class="font-medium text-green-600">VueJS</span>,
           although I don’t limit myself only in this area. Interested
