@@ -88,7 +88,11 @@ onMounted(() => {
 
     <div class="w-full mt-auto">
       <div class="flex items-center gap-3 md:gap-6 mb-4 mt-36">
-        <a href="https://github.com/kajtd" target="_blank">
+        <a
+          href="https://github.com/kajtd"
+          target="_blank"
+          aria-label="Github"
+        >
           <img
             src="./../assets/icons/github-white.svg"
             alt=""
@@ -98,6 +102,7 @@ onMounted(() => {
         <a
           href="https://www.linkedin.com/in/kajetan-domagala/"
           target="_blank"
+          aria-label="Linkedin"
         >
           <img
             src="./../assets/icons/linkedin-white.svg"
