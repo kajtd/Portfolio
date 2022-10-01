@@ -1,11 +1,11 @@
-import { onBeforeUnmount, onMounted, watch, isRef, unref } from "vue";
-import type { Ref } from "vue";
+import { onBeforeUnmount, onMounted, watch, isRef, unref } from 'vue';
+import type { Ref } from 'vue';
 
 export function useEventListener(
   // the target could be reactive ref
   target: Ref<EventTarget | null> | EventTarget,
   event: string,
-  handler: (e: Event) => unknown
+  handler: (e: Event | MouseEvent) => unknown | void
 ) {
   // if target is a reactive ref, use a watcher
   if (isRef(target)) {
