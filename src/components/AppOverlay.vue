@@ -35,6 +35,6 @@ onMounted(() => {
 
 <style scoped>
 .overlay {
-  @apply absolute w-full h-full top-0 z-50 bg-primary;
+  @apply absolute w-1/3 h-full top-0 z-50 bg-primary;
 }
 </style>
