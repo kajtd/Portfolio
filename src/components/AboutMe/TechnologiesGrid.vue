@@ -31,7 +31,7 @@ onMounted(() => {
 <template>
   <div
     ref="technologiesGrid"
-    class="fadein scale-75 sm:scale-100 self-end xl:mr-24 mt-3 sm:mt-16 xl:mt-12"
+    class="fadein w-full self-end xl:mr-24 mt-16 xl:mt-12"
   >
     <TechnologiesRow
       :indexes="[0, 1, 2, 3]"

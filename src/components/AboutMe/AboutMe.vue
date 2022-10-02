@@ -53,7 +53,7 @@ onMounted(() => {
     <div
       class="self-center xl:self-end flex-col xl:flex-row relative flex items-center xl:gap-12 mt-20 xl:mt-0"
     >
-      <div class="flex items-center mt-[15%]">
+      <div class="flex flex-col xl:flex-row items-center sm:mt-[15%]">
         <p
           class="text-3xl md:text-4xl font-medium text-center md:text-left"
         >
@@ -62,7 +62,7 @@ onMounted(() => {
         <img
           src="./../../assets/icons/arrow.svg"
           alt=""
-          class="rotate-[200deg] relative bottom-12 left-1 hidden xl:block"
+          class="xl:rotate-[200deg] relative top-4 xl:top-0 xl:bottom-12 left-1 w-16 xl:w-auto"
         />
       </div>
       <TechnologiesGrid />
