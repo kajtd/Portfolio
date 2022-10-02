@@ -11,7 +11,7 @@ defineProps<Props>();
 
 <template>
   <div
-    class="w-full h-[125px] flex items-center justify-center sm:flex-wrap mt-[-35px]"
+    class="w-full h-[92px] sm:h-[125px] flex items-center justify-center sm:flex-wrap mt-[-35px]"
   >
     <TheTechnology
       v-for="index in indexes"

@@ -68,7 +68,7 @@ onMounted(() => {
       <p
         class="text-black text-sm xs:text-base md:!text-xl max-w-[250px]"
       >
-        View the projects in my portfolio to learn more about who I
+        View the projects in my portfolio and learn more about who I
         am.
       </p>
     </div>

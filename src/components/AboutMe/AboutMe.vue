@@ -31,29 +31,30 @@ onMounted(() => {
         <h3
           class="text-[40px] leading-[50px] md:text-[80px] md:leading-[100px] font-normal max-w-4xl"
         >
-          Passionate about new technologies.
+          I enjoy coding things from scratch
         </h3>
       </div>
       <div
         class="flex flex-col md:flex-row items-start gap-10 w-full md:w-auto"
       >
         <p class="max-w-xs text-base lg:text-xl">
-          I’ve started learning frontend developer in 2019 and haven’t
-          stopped since. With over one year of commercial experience,
-          I am planning on growing as a Frontend Developer.
+          In 2019, I began learning front-end development, and I
+          haven't stopped since. With over a year of commercial
+          experience, I am planning on growing as a
+          <span class="font-medium">Frontend Developer</span>.
         </p>
         <p class="max-w-xs text-base lg:text-xl">
           My favourite framework is
-          <span class="font-medium text-green-600">VueJS</span>,
-          although I don’t limit myself only in this area. Interested
-          in blockchain development, learning web3 technologies.
+          <span class="font-medium text-green-600">VueJS</span>, but I
+          don't limit myself to using it. I'm interested in blockchain
+          development and learning web3 technologies.
         </p>
       </div>
     </div>
     <div
       class="self-center xl:self-end flex-col xl:flex-row relative flex items-center xl:gap-12 mt-20 xl:mt-0"
     >
-      <div class="flex items-center mt-[15%]">
+      <div class="flex flex-col xl:flex-row items-center sm:mt-[15%]">
         <p
           class="text-3xl md:text-4xl font-medium text-center md:text-left"
         >
@@ -62,7 +63,7 @@ onMounted(() => {
         <img
           src="./../../assets/icons/arrow.svg"
           alt=""
-          class="rotate-[200deg] relative bottom-12 left-1 hidden xl:block"
+          class="xl:rotate-[200deg] relative top-4 xl:top-0 xl:bottom-12 left-1 w-16 xl:w-auto"
         />
       </div>
       <TechnologiesGrid />

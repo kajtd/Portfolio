@@ -48,7 +48,7 @@ onMounted(() => {
       </div>
       <form
         class="flex flex-col w-full max-w-[500px]"
-        action="https://formsubmit.co/39cf057abe3d2501ee5442397fe30cdf"
+        action="https://formsubmit.co/kajetan.domagala00@gmail.com"
         method="POST"
       >
         <h3 class="text-4xl mb-6 font-medium">Let's get in touch!</h3>
