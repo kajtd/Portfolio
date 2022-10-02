@@ -20,14 +20,14 @@
     opacity: 1;
     transform: translateX(0px);
   }
+}
 
-  .fadein {
-    transition: opacity 1.5s ease-in-out;
-    opacity: 0;
-  }
+.fadein {
+  transition: opacity 1.5s ease-in-out;
+  opacity: 0;
+}
 
-  .fadein--animation {
-    transform: translateX(0px);
-    opacity: 1;
-  }
+.fadein--animation {
+  transform: translateX(0px);
+  opacity: 1;
 }
