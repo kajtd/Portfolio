@@ -51,7 +51,7 @@ onMounted(() => {
       </div>
     </div>
     <div
-      class="self-center xl:self-end flex-col xl:flex-row relative flex items-center xl:gap-12"
+      class="self-center xl:self-end flex-col xl:flex-row relative flex items-center xl:gap-12 mt-20 xl:mt-0"
     >
       <div class="flex items-center mt-[15%]">
         <p

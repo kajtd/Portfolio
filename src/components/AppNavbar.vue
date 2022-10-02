@@ -30,6 +30,11 @@ const nav = ref<HTMLDivElement>();
 const logoWrapper = ref<HTMLDivElement>();
 const isReducedMotion = useMedia('(prefers-reduced-motion)');
 
+const handleRedirect = (url: string) => {
+  window.location.href = url;
+  mobileNav.value = false;
+};
+
 onMounted(() => {
   if (!isReducedMotion.value) {
     gsap.fromTo(
@@ -120,16 +125,20 @@ const toggleMobileNav = (): void => {
               :key="link.name"
               class="text-3xl py-6 font-bold transition duration-300 cursor-pointer text-black"
             >
-              <button @click="toggleMobileNav">
-                <a :href="link.url" class="inline-block">
-                  <span class="font-medium text-2xl">
-                    {{ link.name }}
-                  </span>
-                </a>
-              </button>
+              <a
+                class="inline-block"
+                @click="handleRedirect(link.url)"
+              >
+                <span class="font-medium text-2xl">
+                  {{ link.name }}
+                </span>
+              </a>
             </li>
             <li>
-              <AppButton href="#contact" class="mt-12">
+              <AppButton
+                class="mt-12"
+                @click="handleRedirect('#contact')"
+              >
                 contact
               </AppButton>
             </li>

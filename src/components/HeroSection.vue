@@ -47,7 +47,7 @@ onMounted(() => {
     <h1
       id="title"
       ref="title"
-      class="text-black text-[34px] md:text-[70px] leading-[60px] font-medium md:leading-[100px] xl:text-[90px] xl:leading-[120px] max-w-7xl lg:ml-24 mb-24"
+      class="text-black text-[34px] md:text-[70px] leading-[60px] font-medium md:leading-[100px] 2xl:text-[90px] 2xl:leading-[120px] max-w-7xl lg:ml-24 mb-24"
     >
       <span
         class="inline-block relative after:h-1 md:after:h-2 after:w-[50%] after:bg-primary after:absolute after:-bottom-1 md:after:-bottom-2 after:left-0"
@@ -58,14 +58,16 @@ onMounted(() => {
     </h1>
     <div
       ref="heroText"
-      class="hidden xs:flex bottom-20 right-0 absolute sm:bottom-24 sm:right-16 xl:!bottom-20 xl:!right-20"
+      class="flex bottom-20 right-0 absolute sm:bottom-24 sm:right-16 xl:!bottom-20 xl:!right-20"
     >
       <img
         src="./../assets/icons/arrow.svg"
         alt=""
-        class="w-24 relative top-14 left-2"
+        class="w-12 xs:w-24 relative top-10 xs:top-14 left-2"
       />
-      <p class="text-black text-base md:text-xl max-w-[250px]">
+      <p
+        class="text-black text-sm xs:text-base md:!text-xl max-w-[250px]"
+      >
         View the projects in my portfolio to learn more about who I
         am.
       </p>
