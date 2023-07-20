@@ -114,7 +114,7 @@ onMounted(() => {
       <p
         class="border-t border-solid border-gray-300 w-full grid place-items-center py-4 text-gray-300 text-sm text-center"
       >
-        Copyright 2022 Kajetan Domagała. All rights reserved.
+        Copyright 2023 Kajetan Domagała. All rights reserved.
       </p>
     </div>
   </footer>
