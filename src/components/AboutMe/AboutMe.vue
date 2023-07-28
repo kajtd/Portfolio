@@ -44,7 +44,7 @@ onMounted(() => {
           <span class="font-medium">Frontend Developer</span>.
         </p>
         <p class="max-w-xs text-base lg:text-xl">
-          My favourite framework is
+          My favorite framework is
           <span class="font-medium text-green-600">VueJS</span>, but I
           don't limit myself to using it. I'm interested in blockchain
           development and learning web3 technologies.
@@ -58,7 +58,7 @@ onMounted(() => {
         <p
           class="text-3xl md:text-4xl font-medium text-center md:text-left"
         >
-          technologies i use
+          technologies I use
         </p>
         <img
           src="./../../assets/icons/arrow.svg"
