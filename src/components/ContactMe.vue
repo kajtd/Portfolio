@@ -8,6 +8,8 @@ const { observedElement, elementClass, observer } =
 
 const contactText = ref<Element>();
 
+const currentYear = ref(new Date().getFullYear());
+
 onMounted(() => {
   observedElement.value = contactText.value;
   elementClass.value = 'fadein--animation';
@@ -33,7 +35,7 @@ onMounted(() => {
           >
             I would love to
             <span
-              class="inline-block relative after:h-1 after:xl:h-2 after:w-[98%] after:bg-primary after:absolute after:bottom-[-2px] after:xl:-bottom-1 after:left-0"
+              class="inline-block relative after:h-1 after:xl:h-3 after:w-[98%] after:bg-primary after:absolute after:bottom-[-2px] after:xl:-bottom-1 after:left-0"
             >
               hear from you
             </span>
@@ -114,7 +116,8 @@ onMounted(() => {
       <p
         class="border-t border-solid border-gray-300 w-full grid place-items-center py-4 text-gray-300 text-sm text-center"
       >
-        Copyright 2023 Kajetan Domagała. All rights reserved.
+        Copyright {{ currentYear }} Kajetan Domagała. All rights
+        reserved.
       </p>
     </div>
   </footer>
