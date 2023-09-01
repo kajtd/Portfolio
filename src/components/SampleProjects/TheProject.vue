@@ -48,6 +48,7 @@ onMounted(() => {
             secondary
             :href="codeUrl"
             :disabled="!codeUrl"
+            target="_blank"
           >
             Code ⌨️
           </AppButton>
@@ -56,6 +57,7 @@ onMounted(() => {
             secondary
             :href="liveUrl"
             :disabled="!liveUrl"
+            target="_blank"
           >
             Live 📡
           </AppButton>
