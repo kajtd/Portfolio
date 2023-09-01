@@ -22,7 +22,7 @@ html {
 }
 
 body {
-  @apply m-0 min-w-[320px] min-h-screen bg-background;
+  @apply m-0 min-w-[320px] min-h-screen bg-background text-black;
 }
 
 #app {
@@ -40,7 +40,7 @@ body {
   @apply bg-primary;
   content: '';
   position: absolute;
-  bottom: 12px;
+  bottom: 18px;
   left: 0;
   width: 100%;
   height: 5px;
