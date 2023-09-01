@@ -57,7 +57,7 @@ onMounted(() => {
         <p
           class="text-3xl md:text-4xl font-medium text-center md:text-left"
         >
-          technologies i use
+          technologies I use
         </p>
         <img
           src="./../../assets/icons/arrow.svg"
