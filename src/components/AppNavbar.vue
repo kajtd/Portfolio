@@ -77,7 +77,7 @@ const toggleMobileNav = (): void => {
 <template>
   <header
     id="home"
-    class="flex items-center justify-between w-full mx-auto pt-6 md:pt-12 px-4 md:px-8 xl:px-24"
+    class="flex items-center justify-between w-full mx-auto pt-6 md:pt-16 px-4 md:px-8 xl:px-24"
   >
     <div class="w-full mx-auto flex items-center justify-between">
       <div
@@ -87,7 +87,7 @@ const toggleMobileNav = (): void => {
         <img
           src="./../assets/icons/spiral.svg"
           alt=""
-          class="mr-1 w-8 md:w-10"
+          class="mr-2 w-8 md:w-10"
         />
         <span class="name">Kajetan Domagała</span>
       </div>

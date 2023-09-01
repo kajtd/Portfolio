@@ -42,7 +42,7 @@ onMounted(() => {
 <template>
   <section
     ref="heroSection"
-    class="h-full flex-1 flex flex-col justify-center relative px-6 md:px-8 xl:px-24"
+    class="h-full flex-1 flex flex-col justify-center relative px-6 mt-12 md:px-8 xl:px-24"
   >
     <h1
       id="title"
@@ -50,11 +50,11 @@ onMounted(() => {
       class="text-black text-[34px] md:text-[70px] leading-[60px] font-medium md:leading-[100px] 2xl:text-[90px] 2xl:leading-[120px] max-w-7xl lg:ml-24 mb-24"
     >
       <span
-        class="inline-block relative after:h-1 md:after:h-2 after:w-[50%] after:bg-primary after:absolute after:-bottom-1 md:after:-bottom-2 after:left-0"
+        class="inline-block relative z-[1] after:z-[-1] after:h-1 md:after:h-4 after:w-full after:bg-primary after:absolute after:bottom-2 md:after:bottom-0 after:left-0"
       >
-        Frontend developer
+        Frontend
       </span>
-      passionate about creating web applications
+      developer passionate about creating web applications.
     </h1>
     <div
       ref="heroText"
@@ -68,8 +68,7 @@ onMounted(() => {
       <p
         class="text-black text-sm xs:text-base md:!text-xl max-w-[250px]"
       >
-        View the projects in my portfolio and learn more about who I
-        am.
+        View the projects in my portfolio and learn more.
       </p>
     </div>
   </section>

@@ -25,11 +25,11 @@ onMounted(() => {
       class="flex flex-col xl:flex-row items-center justify-between gap-10 xl:gap-24"
     >
       <div ref="aboutMe" class="fadein">
-        <h2 class="text-base md:text-xl font-semibold pt-8 xl:pt-0">
+        <h2 class="text-base md:text-xl font-semibold pt-8 xl:pt-4">
           about me
         </h2>
         <h3
-          class="text-[40px] leading-[50px] md:text-[80px] md:leading-[100px] font-normal max-w-4xl"
+          class="text-[40px] leading-[50px] md:text-[80px] md:leading-[100px] font-normal max-w-4xl mt-4"
         >
           I enjoy coding things from scratch
         </h3>
@@ -39,15 +39,14 @@ onMounted(() => {
       >
         <p class="max-w-xs text-base lg:text-xl">
           In 2019, I began learning front-end development, and I
-          haven't stopped since. With over a year of commercial
+          haven't stopped since. With almost two years of commercial
           experience, I am planning on growing as a
           <span class="font-medium">Frontend Developer</span>.
         </p>
         <p class="max-w-xs text-base lg:text-xl">
-          My favourite framework is
-          <span class="font-medium text-green-600">VueJS</span>, but I
-          don't limit myself to using it. I'm interested in blockchain
-          development and learning web3 technologies.
+          <span class="font-medium text-green-600">VueJS</span> is my
+          favorite framework, but I'm also curious about exploring
+          other exciting new technologies.
         </p>
       </div>
     </div>
