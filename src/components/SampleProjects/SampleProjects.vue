@@ -16,15 +16,6 @@ const isReducedMotion = useMedia('(prefers-reduced-motion)');
 const projects = ref<Project[]>([
   {
     imageName: isReducedMotion.value
-      ? 'devdorne-image.webp'
-      : 'devdorne-gif.webp',
-    title: 'devdorne',
-    description: 'SEO-optimized blogging platform for developers.',
-    codeUrl: 'https://github.com/kajtd/devdorne',
-    liveUrl: 'https://devdorne.com',
-  },
-  {
-    imageName: isReducedMotion.value
       ? 'cryptoarc-image.webp'
       : 'cryptoarc-gif.webp',
     title: 'Cryptoarc',
