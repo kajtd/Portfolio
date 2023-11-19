@@ -34,7 +34,7 @@ onMounted(() => {
       <img
         :src="`./images/${imageName}`"
         :alt="imageName"
-        class="max-w-4xl w-full max-h-[500px] object-cover"
+        class="max-w-4xl w-full max-h-[500px] object-contain"
       />
       <div
         class="overlay gap-8 flex flex-col items-center justify-center bg-primary absolute top-0 left-0 right-0 bottom-0 w-full h-full transition-all duration-500 translate-y-[-100%] opacity-0"

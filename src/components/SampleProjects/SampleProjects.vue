@@ -15,27 +15,36 @@ const isReducedMotion = useMedia('(prefers-reduced-motion)');
 
 const projects = ref<Project[]>([
   {
-    imageName: isReducedMotion.value
-      ? 'cryptoarc-image.webp'
-      : 'cryptoarc-gif.webp',
+    imageName: isReducedMotion.value ? 'cryptoarc-image.webp' : 'cryptoarc-gif.webp',
     title: 'Cryptoarc',
-    description:
-      'Send Ether to everyone with this web3 decentralized application.',
+    description: 'Send Ether to everyone with this web3 decentralized application.',
     codeUrl: 'https://github.com/kajtd/cryptoarc',
     liveUrl: 'https://cryptoarc.netlify.app/',
   },
   {
-    imageName: isReducedMotion.value
-      ? 'web_cookbook-image.webp'
-      : 'web_cookbook-gif.webp',
+    imageName: isReducedMotion.value ? 'web_cookbook-image.webp' : 'web_cookbook-gif.webp',
     title: 'WebCookbook',
     description: 'Social media app for people who love to cook.',
     codeUrl: 'https://github.com/kajtd/WebCookbook',
   },
   {
     imageName: isReducedMotion.value
-      ? 'md_previewer-image.webp'
-      : 'md_previewer-gif.webp',
+      ? 'connect-four-game-image.webp'
+      : 'connect-four-game-gif.webp',
+    title: 'ConnectFour',
+    description: 'A popular game where two players drop colored discs into a grid.',
+    codeUrl: 'https://github.com/kajtd/ConnectFourGame',
+    liveUrl: 'https://conn-four-game.netlify.app/',
+  },
+  {
+    imageName: isReducedMotion.value ? 'devdorne-image.webp' : 'devdorne-gif.webp',
+    title: 'devdorne',
+    description: 'SEO-optimized blogging platform for developers.',
+    codeUrl: 'https://github.com/kajtd/devdorne',
+    liveUrl: 'https://devdorne.com',
+  },
+  {
+    imageName: isReducedMotion.value ? 'md_previewer-image.webp' : 'md_previewer-gif.webp',
     title: 'MDPreviewer',
     description: 'Edit your markdown files in the browser.',
     codeUrl: 'https://github.com/kajtd/MD-Previewer',
@@ -50,9 +59,7 @@ const projects = ref<Project[]>([
     class="w-full h-full overflow-x-hidden min-h-screen flex flex-col justify-evenly gap-12 md:gap-36 py-12 md:py-36 px-6 md:px-8 xl:px-24"
   >
     <div>
-      <h2 class="text-4xl sm:text-[64px] sm:leading-[80px]">
-        Sample projects
-      </h2>
+      <h2 class="text-4xl sm:text-[64px] sm:leading-[80px]">Sample projects</h2>
     </div>
     <TheProject
       v-for="(project, index) in projects"
