@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  font-family: Poppins, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -20,7 +20,7 @@ html {
 }
 
 body {
-  @apply m-0 min-w-[320px] min-h-screen bg-background text-black;
+  @apply m-0 min-w-[320px] min-h-screen bg-black text-black;
 }
 
 #app {
@@ -36,7 +36,7 @@ body {
 
 .link::after {
   @apply bg-primary;
-  content: '';
+  content: "";
   position: absolute;
   bottom: 18px;
   left: 0;
