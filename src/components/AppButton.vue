@@ -40,6 +40,7 @@ defineProps<Props>();
         :class="[
           'bg-white rounded-full p-0 w-0 h-0 inline-flex items-center justify-center rotate-180 transition-all duration-500 ease-in-out group-hover:rotate-0 group-hover:rounded-full group-hover:h-8 group-hover:w-8',
           { 'group-hover:!w-4 group-hover:!h-4': small },
+          { '!bg-primary': secondary },
         ]"
       >
         <svg

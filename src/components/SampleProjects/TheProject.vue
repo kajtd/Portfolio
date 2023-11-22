@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
-import AppButton from '../AppButton.vue';
-import { useIntersectionObserver } from './../../composables/useIntersectionObserver';
+import { ref, onMounted } from "vue";
+import AppButton from "../AppButton.vue";
+import { useIntersectionObserver } from "./../../composables/useIntersectionObserver";
 
 interface Props {
   imageName: string;
@@ -14,8 +14,7 @@ interface Props {
 
 const props = defineProps<Props>();
 
-const { observedElement, elementClass, observer } =
-  useIntersectionObserver();
+const { observedElement, elementClass, observer } = useIntersectionObserver();
 
 const project = ref<Element>();
 
@@ -29,7 +28,7 @@ onMounted(() => {
 <template>
   <div ref="project" :class="animationClass">
     <div
-      class="relative max-w-4xl w-full img-wrapper overflow-hidden cursor-pointer"
+      class="relative max-w-4xl w-full img-wrapper overflow-hidden cursor-pointer border-4 border-black rounded-md"
     >
       <img
         :src="`./images/${imageName}`"
@@ -37,29 +36,29 @@ onMounted(() => {
         class="max-w-4xl w-full max-h-[500px] object-contain"
       />
       <div
-        class="overlay gap-8 flex flex-col items-center justify-center bg-primary absolute top-0 left-0 right-0 bottom-0 w-full h-full transition-all duration-500 translate-y-[-100%] opacity-0"
+        class="overlay gap-8 flex flex-col items-center justify-center bg-[rgba(152,103,204,0.9)] absolute top-0 left-0 right-0 bottom-0 w-full h-full transition-all duration-500 translate-y-[-100%] opacity-0"
       >
         <h3 class="text-2xl sm:text-[32px] font-medium">
           {{ title }}
         </h3>
         <div class="flex items-center gap-2">
           <AppButton
+            v-if="codeUrl"
             class="w-24 h-12 text-base"
             secondary
             :href="codeUrl"
-            :disabled="!codeUrl"
             target="_blank"
           >
-            Code ⌨️
+            Code
           </AppButton>
           <AppButton
+            v-if="liveUrl"
             class="w-24 h-12 text-base"
             secondary
             :href="liveUrl"
-            :disabled="!liveUrl"
             target="_blank"
           >
-            Live 📡
+            Live
           </AppButton>
         </div>
       </div>
@@ -67,7 +66,7 @@ onMounted(() => {
     <h3 class="text-2xl sm:text-[32px] font-medium mt-10 mb-4">
       {{ title }}
     </h3>
-    <p class="text-base sm:text-xl">
+    <p class="text-base sm:text-xl font-sans">
       {{ description }}
     </p>
   </div>
