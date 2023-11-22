@@ -1,6 +1,6 @@
 import { ref } from 'vue';
 
-export const useIntersectionObserver = () => {
+export const useIntersectionObserver = (callback?: Function) => {
   const observedElement = ref<Element>();
   const elementClass = ref('');
 
@@ -10,6 +10,9 @@ export const useIntersectionObserver = () => {
         (observedElement.value as Element).classList.add(
           elementClass.value
         );
+        if (callback) {
+          callback()
+        }
       }
     });
   };
