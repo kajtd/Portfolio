@@ -17,7 +17,7 @@ defineProps<Props>();
     :disabled="disabled"
     :type="type || 'button'"
     :class="[
-      'group rounded-full flex items-center justify-center gap-4 relative overflow-hidden transition-colors duration-500 text-lg md:text-2xl h-24 w-24 md:h-32 md:w-32',
+      'z-50 group relative rounded-full flex items-center justify-center gap-4 overflow-hidden transition-colors duration-500 text-lg md:text-2xl h-24 w-24 md:h-32 md:w-32',
       'gradient-border',
       { 'opacity-50 pointer-events-none': disabled },
       {
