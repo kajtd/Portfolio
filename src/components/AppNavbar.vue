@@ -76,7 +76,7 @@ const toggleMobileNav = (): void => {
             <li>
               <a
                 href="#contact"
-                class="hidden md:inline-block link text-2xl leading-[78px] text-white transition-colors duration-250 hover:text-primary"
+                class="hidden md:inline-block link text-2xl leading-[78px] text-white transition-colors duration-250 hover:text-primary cursor-pointer"
               >
                 contact
               </a>
