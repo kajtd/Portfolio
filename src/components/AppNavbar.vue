@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import gsap from "gsap";
-import HamburgerMenuButton from "./HamburgerMenuButton.vue";
 import AppButton from "./AppButton.vue";
 import { useMedia } from "./../composables/useMedia";
 
