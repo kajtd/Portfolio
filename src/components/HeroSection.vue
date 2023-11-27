@@ -7,7 +7,7 @@ import AppButton from "./AppButton.vue";
 const isReducedMotion = useMedia("(prefers-reduced-motion)");
 const heroSection = ref<HTMLDivElement>();
 
-const mainHeaderSplit = computed(() => "Hi, I'm Kajetan".split(""));
+const mainHeaderSplit = computed(() => "Hi, I'm   Kajetan".split(""));
 const scrollDown = ref<HTMLElement>();
 const hireMeButton = ref<HTMLElement>();
 
@@ -26,6 +26,13 @@ const svgDimensions = computed(() => {
 onMounted(() => {
   window.addEventListener("resize", onResize);
   if (!isReducedMotion.value) {
+    gsap.to(".main-header-char", {
+      webkitTextFillColor: "white",
+      duration: 0.5,
+      delay: 1.5,
+      stagger: 0.05,
+      ease: "none",
+    });
     gsap.to(".main-header-char", {
       y: 0,
       stagger: 0.05,
@@ -65,12 +72,12 @@ onUnmounted(() => {
 <template>
   <section
     ref="heroSection"
-    class="h-full flex-1 flex items-center justify-start px-2 xs:px-6 md:px-8 xl:px-24"
+    class="h-full flex-1 flex items-center justify-center px-2 xs:px-6 md:px-8 xl:px-24"
   >
-    <div class="flex flex-col gap-12 text-left items-start ml-4 md:ml-24">
+    <div class="flex flex-col items-center gap-12">
       <h1
         ref="mainHeader"
-        class="mainHeader font-medium text-white text-[34px] md:text-[70px] leading-[60px] md:leading-[100px] 2xl:text-[120px] 2xl:leading-[160px] max-w-7xl"
+        class="mainHeader mb-6 font-semibold text-white text-4xl md:text-[76px] md:leading-[120px] lg:leading-[140px] lg:text-[110px] xl:text-[130px] 2xl:text-[186px] xl:leading-[240px] uppercase"
         id="logo"
       >
         <div
@@ -88,7 +95,7 @@ onUnmounted(() => {
         </div>
       </h1>
       <div ref="hireMeButton">
-        <AppButton>Hire Me</AppButton>
+        <AppButton>Hire me</AppButton>
       </div>
     </div>
     <div
@@ -134,5 +141,7 @@ onUnmounted(() => {
 <style scoped>
 .mainHeader {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  -webkit-text-fill-color: transparent; /* for filled text color */
+  -webkit-text-stroke: 2px white; /* for text stroke */
 }
 </style>
