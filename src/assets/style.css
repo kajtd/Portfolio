@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  font-family: "Bebas Neue", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -17,43 +17,63 @@
 
 html {
   scroll-behavior: smooth;
+  background: rgb(254, 251, 226);
+  background: black;
 }
 
 body {
-  @apply m-0 min-w-[320px] min-h-screen bg-black text-black;
+  @apply m-0 min-w-[320px] min-h-screen bg-black text-white;
 }
 
 #app {
   @apply flex place-items-center my-0 mx-auto;
 }
 
-.link {
-  display: block;
+.custom-icon {
+  @apply relative border-4 border-white border-solid rounded-full p-[10px] w-6 h-6 md:w-16 md:h-16 transition-shadow duration-500 hover:shadow-outlined-primary-shadow;
+}
+
+.gradient-border {
+  aspect-ratio: 1;
   position: relative;
-  padding: 0.2em 0;
+  z-index: 0;
   overflow: hidden;
 }
 
-.link::after {
-  @apply bg-primary;
+.gradient-border:hover {
+  color: black;
+}
+
+.gradient-border::before {
   content: "";
   position: absolute;
-  bottom: 18px;
-  left: 0;
-  width: 100%;
-  height: 5px;
+  z-index: -2;
+  inset: 0;
+  background: linear-gradient(to right, #9f95ff, #e44f26);
+  padding: 3px;
+  border-radius: 50%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.gradient-border::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(to right, #9f95ff, #e44f26);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.gradient-border:hover::after {
   opacity: 1;
-  transform: translate3d(-100%, 0, 0);
-  transition: opacity 0.5s, transform 0.5s;
 }
 
-.link:hover::after,
-.link:focus::after {
-  transform: translate3d(0, 0, 0);
-}
-
-.custom-icon {
-  @apply relative border-4 border-white border-solid rounded-full p-[10px] w-12 h-12 md:w-16 md:h-16 transition-shadow duration-500 hover:shadow-outlined-primary-shadow;
+.custom-link {
+  @apply text-lg lg:text-3xl w-48 lg:w-[260px] border-b-2 lg:border-b-4 border-white pb-4 relative before:absolute before:bg-contain before:-right-4 before:top-0 before:h-6 before:w-12 md:before:h-8 md:before:w-16 before:bg-no-repeat before:bg-[url('arrow.svg')];
 }
 
 @media (prefers-reduced-motion) {
