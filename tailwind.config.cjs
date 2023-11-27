@@ -3,6 +3,9 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      cursor: {
+        pointer: 'url("./public/arrow.svg"), pointer',
+      },
       screens: {
         xs: "480px",
       },
