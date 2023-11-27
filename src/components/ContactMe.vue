@@ -30,37 +30,62 @@ onMounted(() => {
 <template>
   <footer
     id="contact"
-    class="relative bg-black text-white min-h-screen h-full flex flex-col pt-24 xl:pt-48 px-6 pb-1 md:px-8 xl:px-24"
+    class="relative bg-black text-white min-h-[120vh] h-full flex flex-col pt-24 px-6 pb-1 md:px-8 xl:px-24"
   >
     <div
-      class="flex flex-col lg:flex-row items-center justify-around w-full mb-36 gap-24 lg:gap-0"
+      class="flex flex-col xl:flex-row sm:items-center xl:items-start justify-around w-full mb-36 gap-12 xl:gap-24"
     >
-      <h2
-        class="contactHeading uppercase text-[90px] leading-[90px] md:text-[150px] md:leading-[120px] 2xl:!text-[240px] 2xl:leading-[196px] text-white lg:self-end"
-        ref="contactHeading"
-      >
-        <div
-          class="word inline-block mr-2"
-          v-for="(word, wordIndex) in 'contact'.split(' ')"
-          :key="`word-${wordIndex}`"
+      <div class="h-full flex flex-col justify-between">
+        <h2
+          ref="contactHeading"
+          class="contactHeading font-bold uppercase text-5xl sm:text-7xl lg:text-[120px] lg:leading-[100px] xl:text-[110px] xl:leading-[95px] 2xl:!text-[10.5vw] 2xl:leading-[9vw] text-white flex-1"
         >
           <div
-            class="contact-char inline-block transition-transform duration-500 translate-y-64"
-            v-for="(char, charIndex) in word.split('')"
-            :key="`contact-char-${charIndex}`"
+            class="word inline-block mr-2"
+            v-for="(word, wordIndex) in 'contact'.split(' ')"
+            :key="`word-${wordIndex}`"
           >
-            {{ char }}
+            <div
+              class="contact-char inline-block transition-transform duration-500 translate-y-64"
+              v-for="(char, charIndex) in word.split('')"
+              :key="`contact-char-${charIndex}`"
+            >
+              {{ char }}
+            </div>
           </div>
+        </h2>
+        <div
+          class="absolute bottom-32 left-6 xl:static xl:mt-48 xl:ml-12 flex flex-col gap-8"
+        >
+          <a
+            class="custom-link"
+            href="https://www.linkedin.com/in/kajetan-domagala/"
+            target="_blank"
+          >
+            Linkedin
+          </a>
+          <a
+            class="custom-link"
+            href="https://github.com/kajtd"
+            target="_blank"
+          >
+            Github
+          </a>
         </div>
-      </h2>
-
+      </div>
       <form
-        class="flex flex-col w-full max-w-[500px]"
+        class="flex flex-col w-full max-w-[500px] mb-32 xl:mb-0"
         action="https://formsubmit.co/kajetan.domagala00@gmail.com"
         method="POST"
       >
-        <h3 class="text-4xl mb-6 font-medium">Let's get in touch!</h3>
-        <label for="email" class="text-lg my-2">Email</label>
+        <h3 class="text-2xl lg:text-5xl mb-5 lg:mb-10 font-medium">
+          Let's get in touch!
+        </h3>
+        <p class="font-sans mb-6 lg:mb-8 text-base lg:text-xl">
+          Do you have an interesting website idea, or just want to say hello?
+          I'm all ears! Let's chat and see how I can help you out.
+        </p>
+        <label for="email" class="text-2xl my-2">Email</label>
         <div>
           <input
             type="email"
@@ -71,26 +96,26 @@ onMounted(() => {
             class="form-box border-b-2 border-white border-solid outline-none w-full block bg-transparent text-gray-100 text-lg py-3 focus:border-transparent"
           />
           <div
-            class="h-[2px] relative bottom-[2px] bg-primary w-0 transition-all duration-500 line"
+            class="h-[2px] relative bottom-[2px] bg-gradient-to-r from-[#9f95ff] to-[#e44f26] w-0 transition-all duration-500 line"
           ></div>
         </div>
-        <label for="message" class="text-lg my-2"> Message </label>
-        <div class="mb-10">
+        <label for="message" class="text-2xl mt-12 mb-2"> Message </label>
+        <div class="mb-12">
           <textarea
             id="message"
             name="message"
-            rows="4"
+            rows="5"
             required
             maxlength="500"
             class="form-box outline-none border-b-2 border-white border-solid w-full block bg-transparent text-gray-100 text-lg py-3 focus:border-transparent"
           ></textarea>
           <div
-            class="h-[2px] relative bottom-[2px] bg-primary w-0 transition-all duration-500 line"
+            class="h-[2px] relative bottom-[2px] bg-gradient-to-r from-[#9f95ff] to-[#e44f26] w-0 transition-all duration-500 line"
           ></div>
         </div>
         <input type="hidden" name="_template" value="table" />
         <input type="text" name="_honey" class="hidden" />
-        <AppButton type="submit">Submit</AppButton>
+        <AppButton type="submit">submit</AppButton>
       </form>
     </div>
 
