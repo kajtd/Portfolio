@@ -41,7 +41,7 @@ onMounted(() => {
 <template>
   <div
     ref="detailsSection"
-    class="bg-primary opacity-100 sm:min-h-screen text-2xl sm:text-5xl lg:text-7xl 2xl:text-[90px] 2xl:leading-[100px] font-semibold text-black p-9 lg:p-32"
+    class="bg-white opacity-100 py-24 sm:min-h-screen text-2xl sm:text-5xl lg:text-7xl 2xl:text-[90px] 2xl:leading-[100px] font-semibold text-black p-9 lg:p-32"
   >
     <div>
       <div
