@@ -67,10 +67,12 @@ const toggleMobileNav = (): void => {
     <header
       ref="nav"
       id="home"
-      class="flex items-center justify-between w-full mx-auto pt-12 px-4 md:px-8 xl:px-24 relative"
+      class="flex items-center justify-between w-full mx-auto pt-12 px-4 md:px-8 xl:px-24 relative z-30"
     >
       <div class="w-full mx-auto flex items-center justify-between">
-        <a href="/" class="text-xl xs:text-2xl md:text-4xl">Kajetan Domagała</a>
+        <a href="/" class="text-xl md:text-3xl xl:text-4xl cursor-pointer z-1">
+          Kajetan Domagała
+        </a>
         <nav class="flex items-center justify-start">
           <ul class="flex items-center md:gap-10">
             <li>
@@ -82,40 +84,36 @@ const toggleMobileNav = (): void => {
               </a>
             </li>
             <li>
-              <AppButton @click="toggleMobileNav"> menu </AppButton>
+              <AppButton class="!z-50" @click="toggleMobileNav">
+                {{ mobileNav ? "close" : "menu" }}
+              </AppButton>
             </li>
           </ul>
         </nav>
+        <transition name="mobile-nav">
+          <nav
+            v-show="mobileNav"
+            class="flex flex-col justify-center h-screen fixed top-0 left-0 py-12 px-4 md:px-8 xl:px-24 w-full bg-black text-white z-30"
+          >
+            <ul class="self-center md:self-start">
+              <li
+                v-for="link in links"
+                :key="link.name"
+                class="py-8 font-bold transition duration-300 cursor-pointer text-white"
+              >
+                <a class="inline-block" @click="handleRedirect(link.url)">
+                  <span
+                    class="font-medium uppercase text-5xl sm:text-7xl lg:text-[120px] lg:leading-[100px] hover:text-primary transition-colors"
+                  >
+                    {{ link.name }}
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </transition>
       </div>
     </header>
-    <transition name="mobile-nav">
-      <nav
-        v-show="mobileNav"
-        class="flex flex-col justify-center h-full fixed inset-0 py-12 px-4 md:px-8 xl:px-24 w-full bg-black text-white z-30"
-      >
-        <AppButton
-          class="z-50 !absolute top-12 right-4 md:right-0 xl:right-24"
-          @click="toggleMobileNav"
-        >
-          close
-        </AppButton>
-        <ul class="self-center md:self-start">
-          <li
-            v-for="link in links"
-            :key="link.name"
-            class="py-8 font-bold transition duration-300 cursor-pointer text-white"
-          >
-            <a class="inline-block" @click="handleRedirect(link.url)">
-              <span
-                class="font-medium uppercase text-5xl sm:text-7xl lg:text-[120px] lg:leading-[100px] hover:text-primary transition-colors"
-              >
-                {{ link.name }}
-              </span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </transition>
   </div>
 </template>
 
@@ -125,13 +123,13 @@ const toggleMobileNav = (): void => {
   transition: all 0.5s ease-in-out;
 }
 .mobile-nav-enter-from {
-  transform: translateX(100%);
+  transform: translateY(-100%);
 }
 .mobile-nav-enter-to {
-  transform: translateX(0);
+  transform: translateY(0);
 }
 .mobile-nav-leave-to {
-  transform: translateX(100%);
+  transform: translateY(-100%);
 }
 </style>
 Footer
