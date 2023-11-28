@@ -2,14 +2,12 @@
 import { ref, onMounted, onUnmounted, computed } from "vue";
 import gsap from "gsap";
 import { useMedia } from "../composables/useMedia";
-import AppButton from "./AppButton.vue";
 
 const isReducedMotion = useMedia("(prefers-reduced-motion)");
 const heroSection = ref<HTMLDivElement>();
 
 const mainHeaderSplit = computed(() => "Hi, I'm   Kajetan".split(""));
 const scrollDown = ref<HTMLElement>();
-const hireMeButton = ref<HTMLElement>();
 
 const windowWidth = ref(window.innerWidth);
 
@@ -50,17 +48,6 @@ onMounted(() => {
         opacity: 1,
       }
     );
-    gsap.fromTo(
-      hireMeButton.value as HTMLElement,
-      {
-        opacity: 0,
-      },
-      {
-        duration: 1.5,
-        delay: 2,
-        opacity: 1,
-      }
-    );
   }
 });
 
@@ -72,7 +59,7 @@ onUnmounted(() => {
 <template>
   <section
     ref="heroSection"
-    class="h-full flex-1 flex items-center justify-center px-2 xs:px-6 md:px-8 xl:px-24"
+    class="h-full flex-1 flex items-center justify-center px-2 xs:px-6 md:px-8 xl:px-24 z-1"
   >
     <div class="flex flex-col items-center gap-12">
       <h1
@@ -94,9 +81,6 @@ onUnmounted(() => {
           </div>
         </div>
       </h1>
-      <div ref="hireMeButton">
-        <AppButton>Hire me</AppButton>
-      </div>
     </div>
     <div
       ref="scrollDown"
