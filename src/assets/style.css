@@ -37,6 +37,10 @@ body.fixed-bg {
   @apply relative border-4 border-white border-solid rounded-full p-[10px] w-6 h-6 md:w-16 md:h-16 transition-shadow duration-500 hover:shadow-outlined-primary-shadow;
 }
 
+.gradient-background {
+  background: linear-gradient(89.96deg, #9f95ff 14.82%, #f1662a 83.14%);
+}
+
 .gradient-border {
   aspect-ratio: 1;
   position: relative;
