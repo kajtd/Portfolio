@@ -28,15 +28,6 @@ const projects = ref<Project[]>([
     codeUrl: 'https://github.com/kajtd/WebCookbook',
   },
   {
-    imageName: isReducedMotion.value
-      ? 'connect-four-game-image.webp'
-      : 'connect-four-game-gif.webp',
-    title: 'ConnectFour',
-    description: 'A popular game where two players drop colored discs into a grid.',
-    codeUrl: 'https://github.com/kajtd/ConnectFourGame',
-    liveUrl: 'https://conn-four-game.netlify.app/',
-  },
-  {
     imageName: isReducedMotion.value ? 'devdorne-image.webp' : 'devdorne-gif.webp',
     title: 'devdorne',
     description: 'SEO-optimized blogging platform for developers.',
