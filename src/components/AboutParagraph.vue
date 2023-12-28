@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { onMounted, ref } from 'vue';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,27 +12,15 @@ const text = ref(
 );
 
 onMounted(() => {
-  gsap.from(detailsSection.value as HTMLElement, {
-    transformOrigin: "center",
-    ease: "none",
-    opacity: 0.4,
+  gsap.to('.details-char', {
     scrollTrigger: {
       trigger: detailsSection.value as HTMLElement,
-      start: "top center",
-      end: `+=100`,
-      scrub: true,
-    },
-    stagger: 0.1,
-  });
-  gsap.to(".details-char", {
-    scrollTrigger: {
-      trigger: detailsSection.value as HTMLElement,
-      start: "top center",
+      start: 'top center',
       end: `+=${window.innerHeight / 1.3}`,
       scrub: true,
     },
     opacity: 1,
-    ease: "none",
+    ease: 'none',
     stagger: 0.1,
   });
 });
