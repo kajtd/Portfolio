@@ -2,7 +2,7 @@
 interface Props {
   href?: string;
   disabled?: boolean;
-  type?: "submit" | "button" | "reset";
+  type?: 'submit' | 'button' | 'reset';
   secondary?: boolean;
   small?: boolean;
 }
@@ -25,8 +25,7 @@ defineProps<Props>();
           secondary,
       },
       {
-        '!text-base !w-24 !h-12 !gap-2 hover:shadow-outlined-primary-shadow-small':
-          small,
+        '!text-lg !w-28 !h-28 !gap-2': small,
       },
     ]"
   >
