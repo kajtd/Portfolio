@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useEventListener } from "../composables/useEventListener";
 
 const cursor = ref<HTMLDivElement>();
+const isHidden = ref(false);
 
 const x = ref(0);
 const y = ref(0);
@@ -13,12 +14,21 @@ const handleMousemove = (event: Event) => {
 };
 
 useEventListener(document, "mousemove", handleMousemove);
+
+onMounted(() => {
+  const clickableElements = document.querySelectorAll("a, button");
+  clickableElements.forEach((el) => {
+    el.addEventListener("mouseenter", () => (isHidden.value = true));
+    el.addEventListener("mouseleave", () => (isHidden.value = false));
+  });
+});
 </script>
 
 <template>
   <div
     ref="cursor"
-    class="cursor hidden md:block z-50 w-16 h-16 rounded-full border-2 border-gray-500 border-solid transition-all duration-400 ease-out fixed top-0 left-0 pointer-events-none"
+    class="cursor hidden md:block z-50 w-2 h-2 gradient-background rounded-full transition-all duration-500 ease-out fixed top-0 left-0 pointer-events-none"
+    :class="{ '!hidden': isHidden }"
     :style="`transform: translate3d(calc(${x}px - 50%), calc(${y}px - 50%), 0);`"
   ></div>
 </template>
