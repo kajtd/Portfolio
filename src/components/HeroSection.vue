@@ -18,7 +18,7 @@ const svgDimensions = computed(() => {
   if (windowWidth.value < 768) {
     return { width: 100, height: 100 };
   }
-  return { width: 200, height: 200 };
+  return { width: 150, height: 150 };
 });
 
 onMounted(() => {
@@ -87,13 +87,13 @@ onUnmounted(() => {
       class="absolute bottom-4 right-6 md:right-20 grid place-items-center"
     >
       <img
-        class="absolute animate-[spin_3s_linear_infinite] duration-[5s] w-4 h-4 md:w-9 md:h-9"
+        class="absolute animate-[spin_5s_linear_infinite] duration-[5s] w-4 h-4 md:w-6 md:h-6"
         src="./../assets/star.svg"
         alt=""
       />
       <svg
         id="rotatingText"
-        class="animate-[spin_10s_linear_infinite]"
+        class="animate-[spin_14s_linear_infinite]"
         viewBox="0 0 200 200"
         :width="svgDimensions.width"
         :height="svgDimensions.height"
@@ -110,7 +110,7 @@ onUnmounted(() => {
         </defs>
         <text width="400">
           <textPath
-            alignment-baseline="top"
+            alignment-baseline="middle"
             xlink:href="#circle"
             class="font-light tracking-wider uppercase text-[23.9px] fill-current"
           >
