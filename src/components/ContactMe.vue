@@ -38,7 +38,7 @@ onMounted(() => {
       <div class="h-full flex flex-col justify-between">
         <h2
           ref="contactHeading"
-          class="contactHeading font-bold uppercase text-5xl sm:text-7xl lg:text-[120px] lg:leading-[100px] xl:text-[110px] xl:leading-[95px] 2xl:!text-[10.5vw] 2xl:leading-[9vw] text-white flex-1"
+          class="contactHeading font-bold uppercase text-5xl sm:text-7xl lg:text-[120px] lg:leading-[100px] xl:text-[110px] xl:leading-[95px] 2xl:!text-[9.4vw] 2xl:leading-[9vw] text-white flex-1"
         >
           <div
             class="word inline-block mr-2"
