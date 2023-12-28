@@ -1,5 +1,26 @@
 <script setup lang="ts">
+import { onMounted, ref } from "vue";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HorizontalSlider from "./HorizontalSlider.vue";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const technologiesWrapper = ref<HTMLElement>();
+
+onMounted(() => {
+  gsap.to(".technologiesWrapper span", {
+    scrollTrigger: {
+      trigger: technologiesWrapper.value as HTMLElement,
+      start: `top bottom`,
+      end: `+=${window.innerHeight}`,
+      scrub: true,
+    },
+    rotate: 0,
+    ease: "none",
+    stagger: 0.1,
+  });
+});
 </script>
 <template>
   <section
@@ -10,18 +31,18 @@ import HorizontalSlider from "./HorizontalSlider.vue";
     <div
       class="pt-20 flex flex-col xl:flex-row items-center justify-between w-full max-w-7xl mx-auto px-6"
     >
-      <div class="max-w-xl flex flex-col">
-        <h2 class="font-bold text-5xl sm:text-7xl">About me</h2>
-        <p class="text-lg sm:text-xl font-medium mt-5 text-gray-200">
+      <div class="max-w-xl flex flex-col gap-5">
+        <h2 class="font-bold text-5xl sm:text-8xl">About me</h2>
+        <p class="text-lg sm:text-2xl font-medium mt-5 text-gray-200">
           I’m a freelance frontend developer who enjoys coding things from
           scratch.
         </p>
-        <p class="text-lg sm:text-xl font-medium my-3 text-gray-200">
+        <p class="text-lg sm:text-2xl font-medium my-3 text-gray-200">
           I’m located in Poland and I’ve been creating websites since 2019.
           Besides programming I'm also fascinated by technical SEO,
           productivity, and biohacking.
         </p>
-        <p class="text-lg sm:text-xl font-medium text-gray-200">
+        <p class="text-lg sm:text-2xl font-medium text-gray-200">
           <span class="font-bold">Vue + TypeScript + Tailwind</span> is my
           favorite technology stack, but I don't limit myself to it. I like
           trying new solutions and seeing what works and what doesn't.
@@ -48,23 +69,25 @@ import HorizontalSlider from "./HorizontalSlider.vue";
       </ul>
     </div>
     <div
-      class="flex flex-col-reverse gap-12 xl:flex-row items-center justify-between mb-24 max-w-7xl mx-auto w-full px-6"
+      class="flex flex-col-reverse gap-12 xl:flex-row items-center justify-between mb-24 max-w-7xl mx-auto w-full px-6 mt-12"
     >
       <div
-        class="text-4xl sm:text-6xl text-[#979797] flex flex-row flex-wrap max-w-lg gap-4 font-extrabold"
+        ref="technologiesWrapper"
+        class="technologiesWrapper text-4xl sm:text-6xl text-[#979797] flex flex-row flex-wrap max-w-lg gap-4 font-extrabold"
       >
-        <span>HTML</span>
-        <span>CSS</span>
+        <span class="rotate-90">HTML</span>
+        <span class="-rotate-12">CSS</span>
         <span>JavaScript</span>
-        <span>Vue</span>
-        <span>TypeScript</span>
-        <span>Tailwind</span>
-        <span>Firebase</span>
+        <span class="rotate-45">Vue</span>
+        <span class="rotate-12">TypeScript</span>
+        <span class="rotate-6">Tailwind</span>
+        <span class="-rotate-45">Firebase</span>
+        <span class="rotate-0">SEO</span>
       </div>
       <img
         src="https://avatars.githubusercontent.com/u/59440689?v=4"
         alt=""
-        class="rounded-xl h-64 self-start sm:h-96"
+        class="rounded-xl h-64 self-center sm:h-96"
       />
     </div>
   </section>
