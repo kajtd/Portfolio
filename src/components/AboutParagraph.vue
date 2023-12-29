@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { onMounted, ref } from "vue";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,24 +12,26 @@ const text = ref(
 );
 
 onMounted(() => {
-  gsap.to('.details-char', {
-    scrollTrigger: {
-      trigger: detailsSection.value as HTMLElement,
-      start: 'top center',
-      end: `+=${window.innerHeight / 1.3}`,
-      scrub: true,
-    },
-    opacity: 1,
-    ease: 'none',
-    stagger: 0.1,
-  });
+  if (detailsSection.value) {
+    gsap.to(".details-char", {
+      scrollTrigger: {
+        trigger: detailsSection.value,
+        start: "top center",
+        end: `+=${detailsSection.value.offsetHeight / 1.2}`,
+        scrub: true,
+      },
+      opacity: 1,
+      ease: "none",
+      stagger: 0.1,
+    });
+  }
 });
 </script>
 
 <template>
   <div
     ref="detailsSection"
-    class="bg-white opacity-100 py-24 sm:min-h-screen text-2xl sm:text-5xl lg:text-7xl 2xl:text-[90px] 2xl:leading-[100px] font-semibold text-black p-9 lg:p-32"
+    class="bg-white opacity-100 py-24 sm:min-h-screen grid place-items-center text-4xl sm:text-5xl md:text-7xl md:leading-[80px] xl:text-[90px] xl:leading-[100px] font-semibold text-black p-9 lg:p-32"
   >
     <div>
       <div
