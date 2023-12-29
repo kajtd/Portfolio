@@ -16,7 +16,7 @@ const handleMousemove = (event: Event) => {
 useEventListener(document, "mousemove", handleMousemove);
 
 onMounted(() => {
-  const clickableElements = document.querySelectorAll("a, button");
+  const clickableElements = document.querySelectorAll("a, button, a span");
   clickableElements.forEach((el) => {
     el.addEventListener("mouseenter", () => (isHidden.value = true));
     el.addEventListener("mouseleave", () => (isHidden.value = false));

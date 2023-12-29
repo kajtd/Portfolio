@@ -99,11 +99,11 @@ const toggleMobileNav = (): void => {
               <li
                 v-for="link in links"
                 :key="link.name"
-                class="py-8 font-bold transition duration-300 cursor-pointer text-white"
+                class="py-8 font-bold cursor-pointer transition-transform hover:scale-125"
               >
                 <a class="inline-block" @click="handleRedirect(link.url)">
                   <span
-                    class="font-medium uppercase text-5xl sm:text-7xl lg:text-[120px] lg:leading-[100px] hover:text-primary transition-colors"
+                    class="font-medium uppercase text-5xl sm:text-7xl lg:text-[120px] lg:leading-[100px] text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary"
                   >
                     {{ link.name }}
                   </span>
