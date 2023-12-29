@@ -79,9 +79,16 @@ body.fixed-bg {
 .gradient-border:hover::after {
   opacity: 1;
 }
-
 .custom-link {
-  @apply cursor-pointer text-lg lg:text-3xl w-48 lg:w-[260px] border-b-2 lg:border-b-4 border-white pb-4 relative before:absolute before:bg-contain before:-right-4 before:top-0 before:h-6 before:w-12 md:before:h-8 md:before:w-16 before:bg-no-repeat before:bg-[url('arrow.svg')];
+  @apply cursor-pointer text-lg lg:text-3xl w-48 lg:w-[260px] border-b-2 lg:border-b-4 border-white pb-4 relative before:absolute before:bg-contain before:-right-4 before:top-0 md:before:top-1 before:!h-6 before:!w-12 md:before:h-8 md:before:w-16 before:bg-no-repeat before:bg-[url('arrow.svg')];
+}
+
+.custom-link--black {
+  @apply border-black font-medium;
+}
+
+.custom-link--small {
+  @apply text-base lg:text-2xl font-medium w-32 lg:w-48 border-b-2 before:h-5 before:top-2 before:-right-8;
 }
 
 @media (prefers-reduced-motion) {

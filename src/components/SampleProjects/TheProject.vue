@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
 import AppButton from "../AppButton.vue";
-import { useIntersectionObserver } from "./../../composables/useIntersectionObserver";
 
 interface Props {
   imageName: string;
@@ -9,71 +7,50 @@ interface Props {
   description: string;
   codeUrl?: string;
   liveUrl?: string;
-  animationClass: string;
+  left?: boolean;
 }
 
-const props = defineProps<Props>();
-
-const { observedElement, elementClass, observer } = useIntersectionObserver();
-
-const project = ref<Element>();
-
-onMounted(() => {
-  observedElement.value = project.value;
-  elementClass.value = `${props.animationClass}--animation`;
-  observer.observe(observedElement.value as Element);
-});
+defineProps<Props>();
 </script>
 
 <template>
-  <div ref="project" :class="animationClass">
-    <div
-      class="relative max-w-4xl w-full img-wrapper overflow-hidden cursor-pointer border-4 border-black rounded-md"
-    >
-      <img
-        :src="`./images/${imageName}`"
-        :alt="imageName"
-        class="max-w-4xl w-full max-h-[500px] object-contain"
-      />
-      <div
-        class="overlay gap-8 flex flex-col items-center justify-center bg-[rgba(152,103,204,0.9)] absolute top-0 left-0 right-0 bottom-0 w-full h-full transition-all duration-500 translate-y-[-100%] opacity-0"
-      >
-        <h3 class="text-2xl sm:text-[32px] font-medium">
-          {{ title }}
-        </h3>
-        <div class="flex items-center gap-2">
-          <AppButton
-            v-if="codeUrl"
-            class="w-24 h-12 text-base"
-            secondary
-            :href="codeUrl"
-            target="_blank"
-          >
-            Code
-          </AppButton>
-          <AppButton
-            v-if="liveUrl"
-            class="w-24 h-12 text-base"
-            secondary
-            :href="liveUrl"
-            target="_blank"
-          >
-            Live
-          </AppButton>
-        </div>
-      </div>
+  <div
+    :class="[
+      'flex xl:items-center gap-12 md:gap-24 justify-evenly max-w-[2080px] mx-0 xl:mx-auto',
+      left ? 'flex-col xl:flex-row' : 'flex-col xl:flex-row-reverse',
+    ]"
+    ref="project"
+  >
+    <div class="xl:max-w-4xl relative overflow-hidden xl:w-1/2">
+      <a :class="{ 'cursor-pointer': liveUrl }" :href="liveUrl" target="_blank">
+        <img
+          :src="`./images/${imageName}`"
+          :alt="imageName"
+          loading="lazy"
+          :class="[
+            'max-w-4xl w-full max-h-[500px]',
+            { 'transition-transform duration-1000 hover:scale-110': liveUrl },
+          ]"
+        />
+      </a>
     </div>
-    <h3 class="text-2xl sm:text-[32px] font-medium mt-10 mb-4">
-      {{ title }}
-    </h3>
-    <p class="text-base sm:text-xl font-sans">
-      {{ description }}
-    </p>
+    <div class="flex flex-col">
+      <h3 class="text-2xl md:text-[32px] font-medium md:mb-4">
+        {{ title }}
+      </h3>
+      <p
+        class="text-sm xs:text-base md:!text-xl font-sans flex-1 max-w-xl mt-4 mb-12 lg:mb-24"
+      >
+        {{ description }}
+      </p>
+      <a
+        class="mt-auto flex-1 custom-link custom-link--black"
+        :href="codeUrl"
+        target="_blank"
+        small
+      >
+        Code
+      </a>
+    </div>
   </div>
 </template>
-
-<style scoped>
-.img-wrapper:hover .overlay {
-  @apply opacity-100 translate-y-0;
-}
-</style>
