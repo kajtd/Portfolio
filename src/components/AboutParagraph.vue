@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const detailsSection = ref<HTMLElement>();
 
 const text = ref(
-  "I enjoy seeing my work come to life in the form of functional and human-first websites. I'm motivated to create meaningful digital experiences that positively impact people's lives."
+  "I enjoy seeing my work come to life in the form of functional and human-first websites. I am driven by the challenge of adapting to emerging technologies and designing digital experiences that resonate with users."
 );
 
 onMounted(() => {
