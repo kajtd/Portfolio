@@ -1,22 +1,24 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      cursor: {
+        pointer: 'url("./public/arrow.svg"), pointer',
+      },
       screens: {
-        "xs": "480px"
+        xs: "480px",
       },
       boxShadow: {
-        'outlined-primary-shadow': '0 0 0 12px #fcdda3'
+        "outlined-primary-shadow": "0 0 0 16px #9f95ff",
+        "outlined-primary-shadow-small": "0 0 0 4px #9f95ff",
       },
       colors: {
-        primary: '#FCDDA3',
-        background: '#FEFDF1'
-      }
+        primary: "#9f95ff",
+        secondary: "#f1662a",
+        background: "#FEFDF1",
+      },
     },
   },
   plugins: [],
-}
+};
