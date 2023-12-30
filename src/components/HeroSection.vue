@@ -85,7 +85,7 @@ onUnmounted(() => {
     </div>
     <div
       ref="scrollDown"
-      class="absolute bottom-4 right-6 md:right-20 grid place-items-center"
+      class="absolute bottom-4 right-6 md:right-20 hidden place-items-center"
     >
       <img
         class="absolute animate-[spin_5s_linear_infinite] duration-[5s] w-4 h-4 md:w-6 md:h-6"
