@@ -75,20 +75,15 @@ onMounted(() => {
         ref="technologiesWrapper"
         class="technologiesWrapper text-4xl sm:text-6xl text-[#979797] flex flex-row flex-wrap max-w-lg gap-4 font-extrabold"
       >
-        <span class="rotate-90">HTML</span>
-        <span class="-rotate-45">CSS</span>
-        <span class="-rotate-45">JavaScript</span>
-        <span class="rotate-45">Vue</span>
-        <span class="rotate-90">TypeScript</span>
-        <span class="rotate-90">Tailwind</span>
-        <span class="-rotate-45">Firebase</span>
-        <span class="rotate-180">SEO</span>
+        <span class="rotate-12">HTML</span>
+        <span class="-rotate-6">CSS</span>
+        <span class="-rotate-6">JavaScript</span>
+        <span class="rotate-6">Vue</span>
+        <span class="rotate-12">TypeScript</span>
+        <span class="rotate-12">Tailwind</span>
+        <span class="-rotate-6">Firebase</span>
+        <span class="rotate-12">SEO</span>
       </div>
-      <img
-        src="https://avatars.githubusercontent.com/u/59440689?v=4"
-        alt=""
-        class="rounded-xl h-64 self-center sm:h-96"
-      />
     </div>
   </section>
 </template>
