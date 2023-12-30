@@ -6,7 +6,7 @@ import { useMedia } from "../composables/useMedia";
 const isReducedMotion = useMedia("(prefers-reduced-motion)");
 const heroSection = ref<HTMLDivElement>();
 
-const mainHeaderSplit = computed(() => "Hi, I'm   Kajetan".split(""));
+const mainHeaderSplit = computed(() => "Hi, I'm   Kajetan".split(" "));
 const scrollDown = ref<HTMLElement>();
 
 const windowWidth = ref(window.innerWidth);
@@ -64,16 +64,17 @@ onUnmounted(() => {
     <div class="flex flex-col items-center gap-12">
       <h1
         ref="mainHeader"
-        class="mainHeader mb-6 font-semibold text-white text-4xl md:text-[76px] md:leading-[120px] lg:leading-[140px] lg:text-[110px] xl:text-[130px] 2xl:text-[186px] xl:leading-[240px] uppercase"
+        class="mainHeader pl-5 xs:pl-0 mb-6 font-semibold text-white text-6xl sm:text-8xl md:text-[92px] leading-tight md:leading-[140px] lg:leading-[140px] lg:text-[110px] xl:text-[130px] 2xl:text-[186px] xl:leading-[240px] uppercase"
         id="logo"
       >
         <div
           class="word inline-block mr-1 md:mr-2"
+          :class="{ '!block md:!inline-block': word === 'Hi,' }"
           v-for="(word, wordIndex) in mainHeaderSplit"
           :key="`word-${wordIndex}`"
         >
           <div
-            class="main-header-char inline-block transition-transform duration-500 translate-y-48"
+            class="main-header-char inline-block transition-transform duration-500 translate-y-56 xs:translate-y-48"
             v-for="(char, charIndex) in word.split('')"
             :key="`main-header-char-${charIndex}`"
           >
