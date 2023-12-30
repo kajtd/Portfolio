@@ -70,7 +70,10 @@ const toggleMobileNav = (): void => {
       class="flex items-center justify-between w-full mx-auto pt-12 px-4 md:px-8 xl:px-24 relative z-30"
     >
       <div class="w-full mx-auto flex items-center justify-between">
-        <a href="/" class="text-xl md:text-3xl xl:text-4xl cursor-pointer z-1">
+        <a
+          href="/"
+          class="text-xl md:text-3xl xl:text-4xl cursor-pointer z-1 font-medium"
+        >
           Kajetan Domagała
         </a>
         <nav class="flex items-center justify-start">
@@ -99,11 +102,11 @@ const toggleMobileNav = (): void => {
               <li
                 v-for="link in links"
                 :key="link.name"
-                class="py-8 font-bold cursor-pointer transition-transform hover:scale-125"
+                class="py-8 font-bold cursor-pointer transition-transform hover:scale-110 2xl:hover:scale-125"
               >
                 <a class="inline-block" @click="handleRedirect(link.url)">
                   <span
-                    class="font-medium uppercase text-5xl sm:text-7xl lg:text-[120px] lg:leading-[100px] text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary"
+                    class="font-medium uppercase text-5xl sm:text-7xl lg:text-[120px] lg:leading-[100px] text-white"
                   >
                     {{ link.name }}
                   </span>
