@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       cursor: {
-        pointer: 'url("./public/arrow.svg"), pointer',
+        pointer: 'url("./../arrow.svg"), pointer',
       },
       screens: {
         xs: "480px",
