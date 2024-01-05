@@ -10,7 +10,7 @@
           class="slider__content flex items-center relative w-fit h-32 md:h-48"
         >
           <span
-            v-for="i in 16"
+            v-for="i in 99"
             :key="i"
             class="text-center whitespace-nowrap p-4 font-black leading-[100%]"
           >
@@ -25,7 +25,8 @@
 <style scoped>
 .slider__content {
   transform: translate3d(0, 0, 0);
-  animation: sliding 10s linear infinite;
+  /* TODO: fix in the future and clone the nodes once they are hidden */
+  animation: sliding 180s linear infinite;
 }
 
 @keyframes sliding {
