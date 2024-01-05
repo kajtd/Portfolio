@@ -27,7 +27,7 @@ onMounted(() => {
 <template>
   <div
     ref="cursor"
-    class="cursor hidden md:block z-50 w-2 h-2 gradient-background rounded-full transition-all duration-500 ease-out fixed top-0 left-0 pointer-events-none"
+    class="cursor hidden md:block z-50 w-2 h-2 lg:w-4 lg:h-4 gradient-background rounded-full transition-all duration-500 ease-out fixed top-0 left-0 pointer-events-none"
     :class="{ '!hidden': isHidden }"
     :style="`transform: translate3d(calc(${x}px - 50%), calc(${y}px - 50%), 0);`"
   ></div>
