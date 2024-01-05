@@ -76,12 +76,13 @@ onMounted(() => {
         class="technologiesWrapper text-4xl sm:text-6xl text-[#979797] flex flex-row flex-wrap max-w-lg gap-4 font-extrabold"
       >
         <span class="rotate-12">HTML</span>
-        <span class="-rotate-6">CSS</span>
-        <span class="-rotate-6">JavaScript</span>
-        <span class="rotate-6">Vue</span>
+        <span class="-rotate-12">CSS</span>
+        <span class="-rotate-12">JavaScript</span>
+        <span class="rotate-12">Vue</span>
         <span class="rotate-12">TypeScript</span>
         <span class="rotate-12">Tailwind</span>
-        <span class="-rotate-6">Firebase</span>
+        <span class="-rotate-12">Firebase</span>
+        <span class="rotate-12">Nuxt</span>
         <span class="rotate-12">SEO</span>
       </div>
     </div>
